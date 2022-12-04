@@ -17,6 +17,7 @@ void push()
 }
 void pop()
 {
+    
     temp=top;
     top=top->next;
     free(temp);
@@ -26,20 +27,23 @@ void display()
     temp=top;
     while(temp!=NULL)
     {
-        printf("%d",temp->data);
+        printf("%d\t",temp->data);
         temp=temp->next;
     }
 }
 void search()
 {
-    int x;
+    int x,count=1;
     printf("enter the value to search:\n");
     scanf("%d",&x);
     temp=top;
+    while(temp!=0){
     if(x==temp->data){
-        printf("the value %d is in  location %d",x,temp->data);
+        printf("the value %d is in  location %d",x,count);
     }
+    count+=1;
     temp=temp->next;
+    }
 }
 void isempty()
 {
@@ -50,7 +54,7 @@ void isempty()
     else
     {
         printf("it is not empty");
-        
+
     }
 }
 void isfull()
@@ -74,7 +78,7 @@ int main()
     scanf("%d",&choice);
     switch(choice)
     {
-        
+
         case 1:
         push();
         break;
@@ -101,5 +105,5 @@ int main()
         break;
     }
     }
-    
+
 }
